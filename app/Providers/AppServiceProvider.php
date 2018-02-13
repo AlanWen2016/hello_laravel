@@ -13,7 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // 时间戳created_at 和updated_at 作为模型属性被调用是，都会自动转换为Carbon对象
+        \Carbon\Carbon::setLocale('zh');
     }
 
     /**
