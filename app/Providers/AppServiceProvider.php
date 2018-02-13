@@ -12,7 +12,10 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
+	{
+		\App\Models\User::observe(\App\Observers\UserObserver::class);
+		\App\Models\Project::observe(\App\Observers\ProjectObserver::class);
+
         // 时间戳created_at 和updated_at 作为模型属性被调用是，都会自动转换为Carbon对象
         \Carbon\Carbon::setLocale('zh');
     }
