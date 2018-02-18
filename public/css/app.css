@@ -8445,11 +8445,6 @@ body {
 
 /* Topic Index Page */
 
-.topics-index-page .sidebar,
-.categories-show-page .sidebar {
-  border: 1px solid red;
-}
-
 .topics-index-page .topic-list .nav > li > a,
 .categories-show-page .topic-list .nav > li > a {
   position: relative;
