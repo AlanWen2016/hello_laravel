@@ -277,7 +277,7 @@ function forEach(obj, fn) {
   }
 
   // Force an array if not already something iterable
-  if (typeof obj !== 'object') {
+  if (typeof obj !== 'object' && !isArray(obj)) {
     /*eslint no-param-reassign:0*/
     obj = [obj];
   }
@@ -781,7 +781,7 @@ module.exports = function xhrAdapter(config) {
       var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
       var response = {
         data: responseData,
-        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
+        // IE sends 1223 instead of 204 (https://github.com/mzabriskie/axios/issues/201)
         status: request.status === 1223 ? 204 : request.status,
         statusText: request.status === 1223 ? 'No Content' : request.statusText,
         headers: responseHeaders,
@@ -31041,6 +31041,8 @@ var defaults = __webpack_require__(2);
 var utils = __webpack_require__(0);
 var InterceptorManager = __webpack_require__(28);
 var dispatchRequest = __webpack_require__(29);
+var isAbsoluteURL = __webpack_require__(31);
+var combineURLs = __webpack_require__(32);
 
 /**
  * Create a new instance of Axios
@@ -31071,6 +31073,11 @@ Axios.prototype.request = function request(config) {
 
   config = utils.merge(defaults, this.defaults, { method: 'get' }, config);
   config.method = config.method.toLowerCase();
+
+  // Support baseURL config
+  if (config.baseURL && !isAbsoluteURL(config.url)) {
+    config.url = combineURLs(config.baseURL, config.url);
+  }
 
   // Hook up interceptors middleware
   var chain = [dispatchRequest, undefined];
@@ -31280,15 +31287,6 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 var utils = __webpack_require__(0);
 
-// Headers whose duplicates are ignored by node
-// c.f. https://nodejs.org/api/http.html#http_message_headers
-var ignoreDuplicateOf = [
-  'age', 'authorization', 'content-length', 'content-type', 'etag',
-  'expires', 'from', 'host', 'if-modified-since', 'if-unmodified-since',
-  'last-modified', 'location', 'max-forwards', 'proxy-authorization',
-  'referer', 'retry-after', 'user-agent'
-];
-
 /**
  * Parse headers into an object
  *
@@ -31316,14 +31314,7 @@ module.exports = function parseHeaders(headers) {
     val = utils.trim(line.substr(i + 1));
 
     if (key) {
-      if (parsed[key] && ignoreDuplicateOf.indexOf(key) >= 0) {
-        return;
-      }
-      if (key === 'set-cookie') {
-        parsed[key] = (parsed[key] ? parsed[key] : []).concat([val]);
-      } else {
-        parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
-      }
+      parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
     }
   });
 
@@ -31579,8 +31570,6 @@ var utils = __webpack_require__(0);
 var transformData = __webpack_require__(30);
 var isCancel = __webpack_require__(7);
 var defaults = __webpack_require__(2);
-var isAbsoluteURL = __webpack_require__(31);
-var combineURLs = __webpack_require__(32);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -31599,11 +31588,6 @@ function throwIfCancellationRequested(config) {
  */
 module.exports = function dispatchRequest(config) {
   throwIfCancellationRequested(config);
-
-  // Support baseURL config
-  if (config.baseURL && !isAbsoluteURL(config.url)) {
-    config.url = combineURLs(config.baseURL, config.url);
-  }
 
   // Ensure headers exist
   config.headers = config.headers || {};
@@ -42931,7 +42915,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\ExampleComponent.vue"
+Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -42940,9 +42924,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ca92eac", Component.options)
+    hotAPI.createRecord("data-v-7168fb6a", Component.options)
   } else {
-    hotAPI.reload("data-v-0ca92eac", Component.options)
+    hotAPI.reload("data-v-7168fb6a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43129,7 +43113,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
   }
 }
 
@@ -43137,7 +43121,7 @@ if (false) {
 /* 42 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: ENOENT: no such file or directory, scandir '/home/vagrant/Code/Laravel/node_modules/node-sass/vendor'\n    at Error (native)\n    at Object.fs.readdirSync (fs.js:952:18)\n    at Object.getInstalledBinaries (/home/vagrant/Code/Laravel/node_modules/node-sass/lib/extensions.js:128:13)\n    at foundBinariesList (/home/vagrant/Code/Laravel/node_modules/node-sass/lib/errors.js:20:15)\n    at foundBinaries (/home/vagrant/Code/Laravel/node_modules/node-sass/lib/errors.js:15:5)\n    at Object.module.exports.missingBinary (/home/vagrant/Code/Laravel/node_modules/node-sass/lib/errors.js:45:5)\n    at module.exports (/home/vagrant/Code/Laravel/node_modules/node-sass/lib/binding.js:15:30)\n    at Object.<anonymous> (/home/vagrant/Code/Laravel/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Module.require (module.js:497:17)\n    at require (internal/module.js:20:19)\n    at Object.<anonymous> (/home/vagrant/Code/Laravel/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Module.require (module.js:497:17)\n    at require (internal/module.js:20:19)\n    at loadLoader (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at runLoaders (/home/vagrant/Code/Laravel/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:170:18\n    at loadLoader (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/loadLoader.js:27:11)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/home/vagrant/Code/Laravel/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/home/vagrant/Code/Laravel/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/home/vagrant/Code/Laravel/node_modules/webpack/lib/NormalModule.js:275:15)\n    at Compilation.buildModule (/home/vagrant/Code/Laravel/node_modules/webpack/lib/Compilation.js:151:10)\n    at moduleFactory.create (/home/vagrant/Code/Laravel/node_modules/webpack/lib/Compilation.js:454:10)\n    at factory (/home/vagrant/Code/Laravel/node_modules/webpack/lib/NormalModuleFactory.js:243:5)\n    at applyPluginsAsyncWaterfall (/home/vagrant/Code/Laravel/node_modules/webpack/lib/NormalModuleFactory.js:94:13)\n    at /home/vagrant/Code/Laravel/node_modules/tapable/lib/Tapable.js:268:11\n    at NormalModuleFactory.params.normalModuleFactory.plugin (/home/vagrant/Code/Laravel/node_modules/webpack/lib/CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (/home/vagrant/Code/Laravel/node_modules/tapable/lib/Tapable.js:272:13)\n    at resolver (/home/vagrant/Code/Laravel/node_modules/webpack/lib/NormalModuleFactory.js:69:10)\n    at process.nextTick (/home/vagrant/Code/Laravel/node_modules/webpack/lib/NormalModuleFactory.js:196:7)\n    at _combinedTickCallback (internal/process/next_tick.js:73:7)\n    at process._tickCallback (internal/process/next_tick.js:104:9)");
 
 /***/ })
 /******/ ]);
