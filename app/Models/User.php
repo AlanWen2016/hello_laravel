@@ -36,7 +36,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Topic::class);
     }
-
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
 
     /**
      * 判断用户是否为当前用户
