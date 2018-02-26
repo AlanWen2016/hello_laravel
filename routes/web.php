@@ -48,3 +48,7 @@ Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
 //Route::resource('replies', 'RepliesController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
+
+
+// 消息系统通知
+Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);
