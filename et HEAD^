@@ -1,0 +1,223 @@
+[33mcommit 1c416819ec45d8bd968db2650d3aa3eacb1b6fed[m
+Author: Alan <906075319@qq.com>
+Date:   Tue Feb 27 08:26:28 2018 +0000
+
+    Revert "Integrated administrator"
+    
+    This reverts commit ff2384d7e6e6684b8c50052a6c6b09d1241df74c.
+
+[33mcommit ff2384d7e6e6684b8c50052a6c6b09d1241df74c[m
+Author: Alan <906075319@qq.com>
+Date:   Tue Feb 27 07:09:42 2018 +0000
+
+    Integrated administrator
+
+[33mcommit 4aeff24390a405bb3e812fef930c0692a0a1fb94[m
+Author: Alan <906075319@qq.com>
+Date:   Tue Feb 27 06:43:00 2018 +0000
+
+    Add manage contents permission and visit horizon dashboard permission
+
+[33mcommit 98ada6e23249835066550291a9f3ee4ec0d24c53[m
+Author: Alan <906075319@qq.com>
+Date:   Tue Feb 27 02:29:55 2018 +0000
+
+    Integrate laravel-permission package
+
+[33mcommit 4cfbc999e737a4bf25417d347c665e581999531f[m
+Author: Alan <906075319@qq.com>
+Date:   Tue Feb 27 02:02:23 2018 +0000
+
+    User can delete their replies
+
+[33mcommit de970179db0663e7232d3ed74ce35748d3fa65f0[m
+Author: Alan <906075319@qq.com>
+Date:   Mon Feb 26 10:07:36 2018 +0000
+
+    Notify user in email with Queue supported
+
+[33mcommit 2c04b596e8b28be1867747d736a3eb4df88a6950[m
+Author: Alan <906075319@qq.com>
+Date:   Mon Feb 26 09:44:51 2018 +0000
+
+    Notify author when topic replied
+
+[33mcommit 94161fc54a1ea7bb0858267785ee039f8de6858b[m
+Author: Alan <906075319@qq.com>
+Date:   Mon Feb 26 08:04:03 2018 +0000
+
+    User can carete reply
+
+[33mcommit c9a024fd2374eb33529af33c2930805d45ddab4d[m
+Author: Alan <906075319@qq.com>
+Date:   Mon Feb 26 07:19:29 2018 +0000
+
+    List user replies
+
+[33mcommit 593c29fe48ba20d46c73f79e0922033e1277da40[m
+Author: Alan <906075319@qq.com>
+Date:   Sat Feb 24 09:37:56 2018 +0000
+
+    Add queue for translate slug
+
+[33mcommit 7cabffcc200a4a3d68d79093336fec948a448b79[m
+Author: Alan <906075319@qq.com>
+Date:   Sat Feb 24 08:56:50 2018 +0000
+
+    Auto translate slug
+
+[33mcommit bd361761df4034a1cdb72455e189c84019426ae9[m
+Author: Alan <906075319@qq.com>
+Date:   Sat Feb 24 08:10:08 2018 +0000
+
+    Users can delete topic
+
+[33mcommit e777d68c1b1733db0770978972d24867f0e4113e[m
+Author: Alan <906075319@qq.com>
+Date:   Sat Feb 24 06:59:04 2018 +0000
+
+    Users can edit they own topic
+
+[33mcommit 00fde308d4b48bd863afe0238b18c4022291b237[m
+Author: Alan <906075319@qq.com>
+Date:   Sat Feb 24 06:43:10 2018 +0000
+
+    Prevent XSS injection
+
+[33mcommit f3892b6a3bc094bfd92b857d5abbc44ab42205b7[m
+Author: Alan <906075319@qq.com>
+Date:   Sat Feb 24 03:09:40 2018 +0000
+
+    Topic detail page
+
+[33mcommit b1c6686bf022fb958b873ce3fcee7fdfb30eba28[m
+Author: vagrant <vagrant@homestead>
+Date:   Sun Feb 18 14:47:02 2018 +0000
+
+    User can upload topic Image
+
+[33mcommit ce4cf612e83a5305b0cb248c51f0791e3ceb2cc8[m
+Author: vagrant <vagrant@homestead>
+Date:   Sun Feb 18 09:04:14 2018 +0000
+
+    WYSIWYG Editor
+
+[33mcommit f99292e348a5b6e92eac23633bc37177aa7ef745[m
+Author: vagrant <vagrant@homestead>
+Date:   Sun Feb 18 08:48:57 2018 +0000
+
+    modify topic create editor
+
+[33mcommit b812e96ebc032a393ffdb811abf2b15e99690f69[m
+Author: vagrant <vagrant@homestead>
+Date:   Sun Feb 18 07:40:33 2018 +0000
+
+    User can create topic
+
+[33mcommit 1ab4922f3d71e52dabe6b7832a5fea0bef161e8e[m
+Author: Alan <906075319@qq.com>
+Date:   Tue Feb 13 09:10:33 2018 +0000
+
+    List topic created by user
+
+[33mcommit a6b488de191f0f1d7f2d509475a18a5b086347a5[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Feb 13 08:57:34 2018 +0000
+
+    Topic order
+
+[33mcommit 7d9c20ee4a8a9e270f505b0e3b6df3ace7a64a3a[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Feb 13 08:43:25 2018 +0000
+
+    Category topic list
+
+[33mcommit d34ee05ca52de0c2f32c7309af26992e83511157[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Feb 13 07:59:53 2018 +0000
+
+    Topic index page
+
+[33mcommit 336f4fd0008c9a9e8c985ad401e607bf6fe4fbac[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Feb 13 07:27:12 2018 +0000
+
+    Seeding topics and users data
+
+[33mcommit 05fc25b2c26fbd0a7e94d488ba94d0f5e769e847[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Feb 13 06:59:12 2018 +0000
+
+    Generated topics
+
+[33mcommit 5738d5d8b61ca033bf3cd0c99a784b9349f01b9c[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Feb 13 06:53:45 2018 +0000
+
+    Add generator
+
+[33mcommit 03af7adfe3438b6cc815282ad8ce0b75a4f7f751[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Feb 13 03:36:54 2018 +0000
+
+    Create categories
+
+[33mcommit b5bb04de17a41e374fcde98b0c008545c79cf07d[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Feb 13 03:21:17 2018 +0000
+
+    Only ahthorized user can edit user profile
+
+[33mcommit df44d603a464825929c991541011fbe2d6870d01[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Feb 13 03:05:51 2018 +0000
+
+    User upload avatar
+
+[33mcommit d0b7c5c9e96ce08e687083b6dbe56698b7a2cfe3[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Feb 13 01:48:08 2018 +0000
+
+    Basic user profile editing
+
+[33mcommit 484ebb58d651507b34d254a9ec1e1fde70ef207e[m
+Author: vagrant <vagrant@homestead>
+Date:   Mon Feb 12 09:38:43 2018 +0000
+
+    User profile page
+
+[33mcommit 2818bef43edd3836201750592aee2ec9d924ee22[m
+Author: vagrant <vagrant@homestead>
+Date:   Mon Feb 12 09:15:54 2018 +0000
+
+    Move user model to models folder
+
+[33mcommit 30ac5ca6898612616235b34e15de57b4a3c1fa47[m
+Author: vagrant <vagrant@homestead>
+Date:   Mon Feb 12 09:01:49 2018 +0000
+
+    Add captcha
+
+[33mcommit 3c299ca7f1fc3c81623c7efc1c9d3b3a9f38b94b[m
+Author: vagrant <vagrant@homestead>
+Date:   Mon Feb 12 06:44:09 2018 +0000
+
+    Finish user auth
+
+[33mcommit 8176cc10354d75c6f1c4e9658b0b2208ee7474f1[m
+Author: vagrant <vagrant@homestead>
+Date:   Mon Feb 12 02:40:43 2018 +0000
+
+    Finish basic page layout
+
+[33mcommit fb327bcf5d78ea73e3521aa403f09599356bda64[m
+Author: AlanWen2016[C <906075319@qq.com>
+Date:   Sun Feb 11 16:09:23 2018 +0800
+
+    Add custom helpers
+
+[33mcommit 937c0c97145800d73ebb2d647f81eaea2f29268b[m
+Author: AlanWen2016[C <906075319@qq.com>
+Date:   Sun Feb 11 15:43:51 2018 +0800
+
+    Initial commit
