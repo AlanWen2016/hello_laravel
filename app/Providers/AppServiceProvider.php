@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
 		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
 		\App\Models\Topic::observe(\App\Observers\TopicObserver::class);
 		\App\Models\Project::observe(\App\Observers\ProjectObserver::class);
+        \App\Models\Link::observe(\App\Observers\LinkObserver::class);
 
         // 时间戳created_at 和updated_at 作为模型属性被调用是，都会自动转换为Carbon对象
         \Carbon\Carbon::setLocale('zh');
